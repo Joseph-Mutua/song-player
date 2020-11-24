@@ -1,3 +1,5 @@
+import { combineReducers } from "redux";
+
 const songsReducer = () => {
   return [
     { title: "As Long As You Love Me", duration: "3:58" },
@@ -13,3 +15,8 @@ const selectedSongReducer = (selectedSong = null, action) => {
   }
   return selectedSong;
 };
+
+export default combineReducers({
+  songs: songsReducer,
+  selectedSong: selectedSongReducer,
+});
